@@ -1,0 +1,1 @@
+Uploaded laboratory images are stored here at runtime. Do not commit user uploads.

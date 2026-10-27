@@ -1,0 +1,1 @@
+Add approved, source-controlled frontend icon assets here. UI controls currently use Lucide icons from the installed package.

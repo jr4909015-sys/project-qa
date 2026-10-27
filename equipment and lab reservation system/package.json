@@ -1,0 +1,10 @@
+{
+  "name": "equipment-lab-reservation-system",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend-web run dev",
+    "build": "npm --prefix frontend-web run build",
+    "preview": "npm --prefix frontend-web run preview",
+    "mobile:get": "flutter pub get --directory=mobile-app"
+  }
+}

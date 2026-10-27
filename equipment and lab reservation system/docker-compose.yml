@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-school_reservations}
+      POSTGRES_USER: ${POSTGRES_USER:-school_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-replace-me}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-school_app} -d ${POSTGRES_DB:-school_reservations}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build: ./backend
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: db
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+  web:
+    build: ./frontend-web
+    environment:
+      VITE_API_URL: ${COMPOSE_VITE_API_URL:-http://localhost:8000/api}
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+volumes:
+  postgres_data:

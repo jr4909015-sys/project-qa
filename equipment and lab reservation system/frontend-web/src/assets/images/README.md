@@ -1,0 +1,1 @@
+Add approved, source-controlled frontend image assets here.

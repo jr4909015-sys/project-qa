@@ -1,0 +1,1 @@
+Place the approved school logo in this directory as `school-logo.png`. Add the matching favicon to `public/`; no school branding files were provided with the workspace.

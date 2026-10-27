@@ -1,0 +1,1 @@
+Add approved mobile icon assets here.

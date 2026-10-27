@@ -1,0 +1,1 @@
+Django-collected static assets are written to `staticfiles/`; this directory is reserved for app static assets.

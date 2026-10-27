@@ -1,0 +1,1 @@
+Add approved mobile image assets here. No school branding files were supplied.
